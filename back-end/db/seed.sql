@@ -1,6 +1,6 @@
 \c cta_dev;
 
-INSERT INTO test (name) VALUES
+INSERT INTO products (name, details, price, id) VALUES
 ('Monday'),
 ('Tuesday'),
 ('Wednesday'),
