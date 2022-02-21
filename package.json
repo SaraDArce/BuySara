@@ -2,7 +2,7 @@
   "name": "pern-final-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "cd back-end && npm i && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/joinpursuit/pern-final-project.git"
   },
-  "author": "",
+  "author": "Sara D'Arce",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/joinpursuit/pern-final-project/issues"
