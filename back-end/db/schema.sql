@@ -3,11 +3,11 @@ CREATE DATABASE products_dev;
 
 \c products_dev;
 
-DROP TABLE IF EXISTS products;
+-- DROP TABLE IF EXISTS products;
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(80) NOT NULL,
+    name TEXT NOT NULL,
     url TEXT,
     description TEXT,
     price NUMERIC,
@@ -19,8 +19,8 @@ DROP TABLE IF EXISTS reviews;
 
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
-    reviewer VARCHAR(40) NOT NULL,
-    title VARCHAR(40) NOT NULL,
+    reviewer TEXT,
+    title TEXT,
     content TEXT,
     rating NUMERIC, 
     CHECK (rating >= 0 AND rating <=5),

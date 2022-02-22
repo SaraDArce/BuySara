@@ -1,6 +1,9 @@
 // DEPENDENCIES
-const cors = require("cors");
 const express = require("express");
+const cors = require("cors");
+const productController = require("./controllers/productController.js");
+// const reviewsController = require("./controllers/reviewsController");
+
 // const db = require("./db/dbConfig.js");
 
 // CONFIGURATION
@@ -9,20 +12,18 @@ const app = express();
 // MIDDLEWARE
 app.use(cors());
 app.use(express.json()); // Parse incoming JSON
+require("dotenv").config();
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.send("<h1>Buy Sara</h1>");
+  res.send("<h1>Welcome to Buy Sara</h1>");
 });
 
-// app.get("/test", async (req, res) => {
-//   try {
-//     const allProducts = await db.any("SELECT * FROM test");
-//     res.json(allProducts);
-//   } catch (err) {
-//     res.json(err);
-//   }
-// });
+app.use("/products", productController);
+
+app.get("*", (req, res) => {
+  res.status(404).send("Page Not Found");
+});
 
 // app.get("/hello/:firstName/:lastName", (req, res) => {
 //   // console.log(req.params);
@@ -32,11 +33,3 @@ app.get("/", (req, res) => {
 
 // EXPORT
 module.exports = app;
-
-// /////////////////////////////////////
-// // REMOVE AFTER SUCCESSFUL DEPLOYMENT
-// /////////////////////////////////////
-
-// /////////////////////////////////////
-// // REMOVE AFTER SUCCESSFUL DEPLOYMENT
-// /////////////////////////////////////

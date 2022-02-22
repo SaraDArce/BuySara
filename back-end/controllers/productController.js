@@ -7,7 +7,8 @@ const {
   deleteProduct,
   updateProduct,
 } = require("../queries/products.js");
-const { checkName, checkFeatured } = require("../validations/checkProducts.js");
+
+// const { checkName, checkFeatured } = require("../validations/checkProducts.js");
 
 const reviewsController = require("./reviewsController.js");
 

@@ -11,6 +11,7 @@ const {
 reviews.get("/", async (req, res) => {
   const { productID } = req.params;
   console.log(productId);
+
   const allReviews = await getAllReviews(productId);
   if (allReviews[0]) {
     res.status(200).json(allReviews);
