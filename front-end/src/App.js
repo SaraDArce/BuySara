@@ -1,10 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { useState, useEffect } from "react";
-// import './index.css';
-
-// COMPONENTS
-import NavBar from "./Components/NavBar";
 
 // PAGES
 import Edit from "./Pages/Edit";
@@ -13,7 +7,9 @@ import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 import New from "./Pages/New";
 import Show from "./Pages/Show";
-const API = process.env.REACT_APP_API_URL;
+
+// COMPONENTS
+import NavBar from "./Components/NavBar";
 
 function App() {
   return (

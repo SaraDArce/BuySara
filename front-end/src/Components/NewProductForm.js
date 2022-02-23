@@ -39,6 +39,7 @@ function NewProductForm() {
     event.preventDefault();
     addProduct();
   };
+
   return (
     <div className="New">
       <form onSubmit={handleSubmit}>
