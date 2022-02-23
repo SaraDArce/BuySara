@@ -8,11 +8,11 @@ const {
   updateProduct,
 } = require("../queries/products.js");
 
-// const { checkName, checkFeatured } = require("../validations/checkProducts.js");
+const { checkName, checkFeatured } = require("../validations/checkProducts.js");
 
-const reviewsController = require("./reviewsController.js");
+// const reviewsController = require("./reviewsController.js");
 
-products.use("/:productId/reviews", reviewsController);
+// products.use("/:productId/reviews", reviewsController);
 
 products.get("/", async (req, res) => {
   try {
@@ -43,18 +43,18 @@ products.get("/:id", async (req, res) => {
 
 products.post("/", async (req, res) => {
   const { body } = req;
-  // const { name, url, is_featured } = req.body;
-  // if(!name || !url)
-  try {
-    const createdProduct = await createProduct(body);
-    if (createdProduct.id) {
-      res.status(200).json(createdProduct);
-    } else {
-      res.status(500).json({ error: "Product Creation Error" });
+  const { name, url, is_featured } = req.body;
+  if (!name || !url)
+    try {
+      const createdProduct = await createProduct(body);
+      if (createdProduct.id) {
+        res.status(200).json(createdProduct);
+      } else {
+        res.status(500).json({ error: "Product Creation Error" });
+      }
+    } catch (err) {
+      console.log(err);
     }
-  } catch (err) {
-    console.log(err);
-  }
 });
 
 products.delete("/:id", async (req, res) => {
@@ -67,7 +67,7 @@ products.delete("/:id", async (req, res) => {
   }
 });
 
-products.put("/:id", async (req, res) => {
+products.put("/:id", checkProduct, async (req, res) => {
   const { id } = req.params;
   const { body } = req;
   const updatedProduct = await updateProduct(id, body);
