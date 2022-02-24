@@ -84,11 +84,13 @@ function EditProductForm() {
         />
 
         <br />
+        <br></br>
 
-        <input type="submit" />
+        <input type="submit" class="btn btn-lg btn-primary" />
       </form>
       <Link to={`/products/${id}`}>
-      <button type="button" class="btn btn-outline-danger">Cancel Request</button>
+        <br></br>
+      <button type="button" class="btn btn-sm btn-danger">Cancel Request</button>
       </Link>
     </div>
   );

@@ -14,6 +14,7 @@ function Product({ product }) {
       ) : (
         <span>&nbsp; &nbsp; &nbsp;</span>
       )}
+       <button type="button" class="btn btn-link">Click Pencil to Manage Listing</button>
       <Link to={`/products/${product.id}`}>✏️</Link>
     </div>
   );
