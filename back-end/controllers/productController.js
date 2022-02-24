@@ -7,8 +7,9 @@ const {
   deleteProduct,
   updateProduct,
 } = require("../queries/products.js");
+const { validateProduct } = require("../validations/checkProducts.js");
 
-const { checkName, checkFeatured } = require("../validations/checkProducts.js");
+// const { checkName, checkFeatured } = require("../validations/checkProducts.js");
 
 // const reviewsController = require("./reviewsController.js");
 
@@ -44,7 +45,9 @@ products.get("/:id", async (req, res) => {
 products.post("/", async (req, res) => {
   const { body } = req;
   const { name, url, is_featured } = req.body;
-  if (!name || !url)
+  if (!name || !url) {
+    res.status(500).json({ error: "Product requires name and url" });
+  } else {
     try {
       const createdProduct = await createProduct(body);
       if (createdProduct.id) {
@@ -55,6 +58,7 @@ products.post("/", async (req, res) => {
     } catch (err) {
       console.log(err);
     }
+  }
 });
 
 products.delete("/:id", async (req, res) => {
@@ -67,7 +71,7 @@ products.delete("/:id", async (req, res) => {
   }
 });
 
-products.put("/:id", checkProduct, async (req, res) => {
+products.put("/:id", async (req, res) => {
   const { id } = req.params;
   const { body } = req;
   const updatedProduct = await updateProduct(id, body);

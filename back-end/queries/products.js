@@ -9,7 +9,7 @@ const getAllProducts = async () => {
   }
 };
 
-const getProduct = async () => {
+const getProduct = async (id) => {
   try {
     const oneProduct = await db.one("SELECT * FROM products WHERE id=$1", id);
     return oneProduct;
