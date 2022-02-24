@@ -13,13 +13,6 @@ body {
   text-size-adjust: inherit;
 }
 
-.New .editPrice {
-  font-size: 18px;
-}
-
-.Edit .editPrice {
-  font-size: 18px;
-}
 
 .nav li {
   display: inline;
@@ -84,5 +77,9 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  monospace;
+}
+
+.editPrice {
+  font-size: 18px !important;
 }

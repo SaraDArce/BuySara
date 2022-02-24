@@ -12,7 +12,7 @@ function EditProductForm() {
     name: "",
     url: "",
     description: "",
-    price: 0,
+    price: "",
     is_featured: false,
   });
 
@@ -78,10 +78,10 @@ function EditProductForm() {
         />
         <label htmlFor="price">Price:</label>
         <input
-          id="editPrice"
+          id="price"
+          className="editPrice"
           type="number"
           value={product.price}
-          placeholder="0"
           onChange={handleTextChange}
         />
         <label htmlFor="is_featured">Featured:</label>
