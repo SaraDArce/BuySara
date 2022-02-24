@@ -79,6 +79,17 @@ function NewProductForm() {
           />
           <br></br>
           <br></br>
+          <label htmlFor="price">Price:</label>
+          <input
+            id="editPrice"
+            type="number"
+            value={product.price}
+            placeholder="0"
+            onChange={handleTextChange}
+          />
+
+          <br></br>
+          <br></br>
           <label htmlFor="is_featured">Featured:</label>
           <input
             // className="input-sm"

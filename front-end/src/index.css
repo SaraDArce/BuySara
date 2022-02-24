@@ -13,6 +13,14 @@ body {
   text-size-adjust: inherit;
 }
 
+.New .editPrice {
+  font-size: 18px;
+}
+
+.Edit .editPrice {
+  font-size: 18px;
+}
+
 .nav li {
   display: inline;
 }

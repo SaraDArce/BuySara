@@ -78,10 +78,8 @@ function EditProductForm() {
         />
         <label htmlFor="price">Price:</label>
         <input
-          id="price"
+          id="editPrice"
           type="number"
-          pattern="http[s]*://.+"
-          required
           value={product.price}
           placeholder="0"
           onChange={handleTextChange}
