@@ -1,8 +1,6 @@
-\c products_dev;
-
 INSERT INTO products (name, url, description, price, rating, is_featured) VALUES
 ('COBRA Black Snakes (6pcs)', 'https://images.unsplash.com/photo-1595204930135-f9d0e62644dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bm92ZWx0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60', 'WARNING FLAMMABLE Read directions, adult supervision required! Fun safe kids fireworks', '12', '3', true),
-('Chattering Teeth', 'https://c.pxhere.com/photos/42/06/toy_mouth_teeth-899785.jpg', 'Chattering teeth with feet! Wind up action!', '5.41', '3', true),
+('Chattering Teeth', 'https://media.istockphoto.com/photos/chatter-teeth-picture-id184653760?b=1&k=20&m=184653760&s=170667a&w=0&h=a3sa7-wwB1RBVvnPfyAn_-yFzjYx6MtTOegZjHM9Y5A=', 'Chattering teeth with feet! Wind up action!', '5.41', '3', true),
 ('Monkey Whoopie Cushion', 'http://api.openverse.engineering/v1/images/4a1c8036-81b2-48a0-902e-cec815b0ea7a/thumb/', 'When anyone sits, for a real Bronx Cheer!', '7', '3', false),
 ('Coffee Hound Mug', 'http://api.openverse.engineering/v1/images/e0d8223b-2a36-4aef-9cdf-5a0cd126bc0f/thumb/', '"Vintage Novelty Coffee Cup" by GranniesKitchen', '12', '4', true),
 ('View-Master', 'https://images.unsplash.com/photo-1615402019964-169f5ecbaf05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80', 'Original! Used Condition', '49', '5', true),

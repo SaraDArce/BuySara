@@ -1,8 +1,4 @@
--- DROP TABLE IF EXISTS products;
-DROP DATABASE IF EXISTS products_dev;
-CREATE DATABASE products_dev;
-
--- \c products_dev;
+DROP TABLE IF EXISTS products;
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
