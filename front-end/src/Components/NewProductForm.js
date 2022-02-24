@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
 function NewProductForm() {
+  let { id } = useParams();
   let navigate = useNavigate();
 
   const [product, setProduct] = useState({
@@ -78,7 +79,6 @@ function NewProductForm() {
             onChange={handleTextChange}
           />
           <br></br>
-          <br></br>
           <label htmlFor="price">Price:</label>
           <input
             id="price"
@@ -87,7 +87,6 @@ function NewProductForm() {
             value={product.price}
             onChange={handleTextChange}
           />
-
           <br></br>
           <br></br>
           <label htmlFor="is_featured">Featured:</label>
@@ -100,7 +99,14 @@ function NewProductForm() {
           />
           <br></br>
           <br></br>
-          <input className="input-sm" type="submit" />
+          <input type="submit" class="btn btn-lg btn-primary" />
+          <br></br>
+          <Link to={`/products/${id}`}>
+            <br></br>
+            <button type="button" class="btn btn-sm btn-danger">
+              Cancel Request
+            </button>
+          </Link>
         </div>
       </form>
     </div>
