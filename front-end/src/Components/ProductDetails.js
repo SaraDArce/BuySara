@@ -34,29 +34,33 @@ function ProductDetails() {
 
   return (
     <article>
-      <h3>
-        {true ? <span>⭐️</span> : null} {product.name}
-      </h3>
-      <h5>
-        <span>
-          <a href={product.url}>{product.name}</a>
-        </span>
+      <div className="prodCard">
+        <h2 id="name">{product.name}</h2>
         <img src={product.url} alt="No Image Provided" />
-      </h5>
-      <p>{product.description}</p>
-      <div className="showNavigation">
-        <div>
-          <Link to={`/products`}>
-            <button>Back</button>
-          </Link>
-        </div>
-        <div>
-          <Link to={`/products/${id}/edit`}>
-            <button>Edit</button>
-          </Link>
-        </div>
-        <div>
-          <button onClick={handleDelete}>Delete</button>
+        <span>
+          <h4 id="price">${product.price}</h4>
+        </span>
+        <p id="description">{product.description}</p>
+        {product.is_featured ? (
+          <span>⭐️</span>
+        ) : (
+          <span>&nbsp; &nbsp; &nbsp;</span>
+        )}
+        <Link to={`/products/${product.id}`}>✏️</Link>
+        <div className="showNavigation">
+          <div>
+            <Link to={`/products`}>
+              <button>Back</button>
+            </Link>
+          </div>
+          <div>
+            <Link to={`/products/${id}/edit`}>
+              <button>Edit</button>
+            </Link>
+          </div>
+          <div>
+            <button onClick={handleDelete}>Delete</button>
+          </div>
         </div>
       </div>
       {/* <Reviews /> */}
