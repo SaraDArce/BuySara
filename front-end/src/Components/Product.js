@@ -2,23 +2,20 @@ import { Link } from "react-router-dom";
 
 function Product({ product }) {
   return (
-    <tr>
-      <td>
-        {product.is_featured ? (
-          <span>⭐️</span>
-        ) : (
-          <span>&nbsp; &nbsp; &nbsp;</span>
-        )}
-      </td>
-      <td>
-        <a href={product.url} target="_blank" rel="noreferrer">
-          {product.name}
-        </a>
-      </td>
-      <td>
-        <Link to={`/products/${product.id}`}>✏️</Link>
-      </td>
-    </tr>
+    <div className="prodCard">
+      <h2 id="name">{product.name}</h2>
+      <img src={product.url} alt="No Image Provided" />
+      <span>
+        <h4 id="price">${product.price}</h4>
+      </span>
+      <p id="description">{product.description}</p>
+      {product.is_featured ? (
+        <span>⭐️</span>
+      ) : (
+        <span>&nbsp; &nbsp; &nbsp;</span>
+      )}
+      <Link to={`/products/${product.id}`}>✏️</Link>
+    </div>
   );
 }
 

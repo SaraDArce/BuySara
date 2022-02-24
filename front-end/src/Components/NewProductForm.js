@@ -11,7 +11,7 @@ function NewProductForm() {
     name: "",
     url: "",
     description: "",
-    price: Number,
+    price: 0,
     is_featured: false,
   });
 
@@ -43,44 +43,54 @@ function NewProductForm() {
   return (
     <div className="New">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          id="name"
-          value={product.name}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Product Name"
-          required
-        />
-        <label htmlFor="url">URL:</label>
-        <input
-          id="url"
-          type="text"
-          //   pattern="http[s]*://.+"
-          //   required
-          value={product.url}
-          placeholder="http://"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="description">Description:</label>
-        <input
-          id="description"
-          type="text"
-          name="description"
-          value={product.description}
-          placeholder="product description"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="is_featured">Featured:</label>
-        <input
-          id="is_featured"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={product.is_featured}
-        />
-
-        <br />
-        <input type="submit" />
+        <div class="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            // className="input-sm"
+            id="name"
+            value={product.name}
+            type="text"
+            onChange={handleTextChange}
+          />
+          <br></br>
+          <br></br>
+          <label htmlFor="url">URL:</label>
+          <input
+            // className="input-sm"
+            id="url"
+            type="text"
+            pattern="http[s]*://.+"
+            required
+            value={product.url}
+            placeholder="http://"
+            onChange={handleTextChange}
+          />
+          <br></br>
+          <br></br>
+          <label htmlFor="description">Description:</label>
+          <input
+            // className="input-sm"
+            id="description"
+            type="text"
+            name="description"
+            value={product.description}
+            placeholder="product description"
+            onChange={handleTextChange}
+          />
+          <br></br>
+          <br></br>
+          <label htmlFor="is_featured">Featured:</label>
+          <input
+            // className="input-sm"
+            id="is_featured"
+            type="checkbox"
+            onChange={handleCheckboxChange}
+            checked={product.is_featured}
+          />
+          <br></br>
+          <br></br>
+          <input className="input-sm" type="submit" />
+        </div>
       </form>
     </div>
   );

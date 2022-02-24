@@ -19,28 +19,15 @@ function Products() {
   }, []);
 
   return (
-    <div className="Products">
+    <div className="container-sm">
       <div id="productsContainer">
-        <section>
-          {/* <table> */}
-            <thead>
-              <tr>
-                <th></th>
-                {/* <th>View</th>
-                <th>Edit</th> */}
-              </tr>
-            </thead>
-            <tbody>
-              {products.map((product) => {
-                return (
-                 <div>
-                    <Product key={product.id} product={product} />
-                 </div>
-                );
-              })}
-            </tbody>
-          {/* </table> */}
-        </section>
+        {products.map((product) => {
+          return (
+            <div className="prodDisp">
+              <Product key={product.id} product={product} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

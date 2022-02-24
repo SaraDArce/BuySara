@@ -37,8 +37,8 @@ function EditProductForm() {
 
   useEffect(() => {
     axios.get(`${API}/products/${id}`).then(
-      (response) => setProduct(response.data),
-      (error) => navigate(`/not-found`)
+      (response) => setProduct(response.data)
+      // (error) => navigate(`/not-found`)
     );
   }, [id, navigate]);
 
@@ -55,8 +55,6 @@ function EditProductForm() {
           value={product.name}
           type="text"
           onChange={handleTextChange}
-          placeholder="Product Name"
-          required
         />
         <label htmlFor="url">URL:</label>
         <input

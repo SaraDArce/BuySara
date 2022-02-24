@@ -41,7 +41,7 @@ function ProductDetails() {
         <span>
           <a href={product.url}>{product.name}</a>
         </span>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{product.url}
+        <img src={product.url} alt="No Image Provided" />
       </h5>
       <p>{product.description}</p>
       <div className="showNavigation">
@@ -51,7 +51,7 @@ function ProductDetails() {
           </Link>
         </div>
         <div>
-          <Link to={`/products/${product.id}/edit`}>
+          <Link to={`/products/${id}/edit`}>
             <button>Edit</button>
           </Link>
         </div>
