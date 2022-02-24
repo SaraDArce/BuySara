@@ -76,6 +76,16 @@ function EditProductForm() {
           placeholder="Enter Product Description"
           onChange={handleTextChange}
         />
+        <label htmlFor="price">Price:</label>
+        <input
+          id="price"
+          type="number"
+          pattern="http[s]*://.+"
+          required
+          value={product.price}
+          placeholder="0"
+          onChange={handleTextChange}
+        />
         <label htmlFor="is_featured">Featured:</label>
         <input
           id="is_featured"
