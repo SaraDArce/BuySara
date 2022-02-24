@@ -12,6 +12,7 @@ function EditProductForm() {
     name: "",
     url: "",
     description: "",
+    price: 0,
     is_featured: false,
   });
 
@@ -90,7 +91,9 @@ function EditProductForm() {
       </form>
       <Link to={`/products/${id}`}>
         <br></br>
-      <button type="button" class="btn btn-sm btn-danger">Cancel Request</button>
+        <button type="button" class="btn btn-sm btn-danger">
+          Cancel Request
+        </button>
       </Link>
     </div>
   );
