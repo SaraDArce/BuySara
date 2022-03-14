@@ -15,15 +15,15 @@ CREATE TABLE products (
     is_featured BOOLEAN
 );
 
--- DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS reviews;
 
--- CREATE TABLE reviews (
---     id SERIAL PRIMARY KEY,
---     reviewer TEXT,
---     title TEXT,
---     content TEXT,
---     rating NUMERIC, 
---     CHECK (rating >= 0 AND rating <=5),
---     product_id INTEGER REFERENCES products (id)
---     ON DELETE CASCADE
--- );
+CREATE TABLE reviews (
+    id SERIAL PRIMARY KEY,
+    reviewer TEXT,
+    title TEXT,
+    content TEXT,
+    rating NUMERIC, 
+    CHECK (rating >= 0 AND rating <=5),
+    product_id INTEGER REFERENCES products (id)
+    ON DELETE CASCADE
+);

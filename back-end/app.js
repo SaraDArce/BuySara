@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const productController = require("./controllers/productController.js");
-// const reviewsController = require("./controllers/reviewsController");
+const reviewsController = require("./controllers/reviewsController.js");
 
 // const db = require("./db/dbConfig.js");
 
@@ -20,6 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/products", productController);
+app.use("/reviews", reviewsController);
 
 app.get("*", (req, res) => {
   res.status(404).send("Page Not Found");
