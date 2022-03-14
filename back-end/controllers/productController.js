@@ -10,8 +10,8 @@ const {
 const { validateProduct } = require("../validations/checkProducts.js");
 
 // const { checkName, checkFeatured } = require("../validations/checkProducts.js");
-// const reviewsController = require("./reviewsController.js");
-// products.use("/:productId/reviews", reviewsController);
+const reviewsController = require("./reviewsController.js");
+products.use("/:productId/reviews", reviewsController);
 
 products.get("/", async (req, res) => {
   try {

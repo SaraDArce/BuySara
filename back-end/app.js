@@ -1,8 +1,8 @@
 // DEPENDENCIES
-const express = require("express");
 const cors = require("cors");
+const express = require("express");
 const productController = require("./controllers/productController.js");
-const reviewsController = require("./controllers/reviewsController.js");
+// const reviewsController = require("./controllers/reviewsController.js");
 
 // const db = require("./db/dbConfig.js");
 
@@ -13,6 +13,7 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // Parse incoming JSON
 require("dotenv").config();
+// app.use("/reviews", reviewsController);
 
 // ROUTES
 app.get("/", (req, res) => {
@@ -20,7 +21,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/products", productController);
-app.use("/reviews", reviewsController);
 
 app.get("*", (req, res) => {
   res.status(404).send("Page Not Found");

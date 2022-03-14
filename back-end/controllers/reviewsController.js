@@ -1,4 +1,5 @@
 const express = require("express");
+
 const reviews = express.Router({ mergeParams: true });
 const {
   getAllReviews,
@@ -9,9 +10,14 @@ const {
 } = require("../queries/reviews");
 
 reviews.get("/", async (req, res) => {
-  const { product_id } = req.params;
-  console.log(product_id);
-
+  const { productId } = req.params;
+  console.log(productId);
+  /* (as opposed to "if") try {
+    const allReviews = await getAllReviews(bookmarkId);
+    res.json(allReviews);
+  } catch (err) {
+    res.json(err);
+  } */
   const allReviews = await getAllReviews(productId);
   if (allReviews[0]) {
     res.status(200).json(allReviews);
@@ -30,7 +36,7 @@ reviews.get("/:id", async (req, res) => {
   }
 });
 
-reviews.put("/", async (req, res) => {
+reviews.put("/:id", async (req, res) => {
   const { id } = req.params;
   const updatedReview = await updateReview(id, req.body);
   if (updatedReview.id) {
@@ -47,6 +53,7 @@ reviews.post("/", async (req, res) => {
 
 reviews.delete("/:id", async (req, res) => {
   const { id } = req.params;
+  
   const deletedReview = await deleteReview(id);
   if (deletedReview.id) {
     res.status(200).json(deletedReview);
